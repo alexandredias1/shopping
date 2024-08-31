@@ -1,0 +1,44 @@
+﻿@page "{id:int}"
+@model shopping.Pages.DetalhesModel
+
+@{
+    ViewData["Title"] = "Detalhes do Filme";
+    var filme = Model.Filme;
+}
+<header class="p-3 mb-3 border-bottom">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                <img class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap" src="/imagens/logocentershop.jpg" />
+            </a>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">O Shopping</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Cinema</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Lojas</a></li>
+                <li><a href="#" class="nav-link px-2 link-body-emphasis">Contato</a></li>
+            </ul>
+
+            <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                <input type="search" class="form-control" placeholder="Buscar..." aria-label="Buscar">
+            </form>
+        </div>
+    </div>
+</header>
+
+<div class="container mt-4">
+    <h2>@filme.Titulo</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="@filme.ImagemUrl" class="img-fluid" alt="@filme.Titulo">
+        </div>
+        <div class="col-md-6">
+            <p><strong>Gênero:</strong> @filme.Genero</p>
+            <p><strong>Duração:</strong> @filme.Duracao minutos</p>
+            <p><strong>Sessões:</strong> @filme.Sessoes</p>
+            <p><strong>Descrição:</strong> @filme.Descricao</p>
+        </div>
+    </div>
+    <a href="/Filmes" class="btn btn-primary mt-4">Voltar</a>
+</div>
